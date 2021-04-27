@@ -1,17 +1,14 @@
-import 'package:addicts_movies/pages/pelicula_detalle.dart';
+import 'package:addicts_movies/models/clase_Pelicula.dart';
+import 'package:addicts_movies/widgets/detalles_w.dart';
 import 'package:flutter/material.dart';
 
 class PeliculaWidget extends StatelessWidget {
   const PeliculaWidget({
+    this.pelicula,
     Key key,
-    this.titleW,
-    this.imageW,
-    this.descriptionW = '',
   }) : super(key: key);
 
-  final String titleW;
-  final String imageW;
-  final String descriptionW;
+  final Pelicula pelicula;
 
   @override
   Widget build(BuildContext context) {
@@ -19,38 +16,31 @@ class PeliculaWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Text(
-          titleW,
-          style: TextStyle(
-            fontSize: 20,
-          ),
-        ),
         ClipRRect(
           borderRadius: BorderRadius.circular(50),
           child: InkWell(
             onTap: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
-                  builder: (context) => PeliculaDetalle(
-                    image: imageW,
-                    title: titleW,
-                    description: descriptionW,
+                  builder: (context) => DetalleWidget(
+                    pelicula: pelicula,
                   ),
                 ),
               );
             },
             child: Image.network(
-              'https://www.themoviedb.org/t/p/w600_and_h900_bestv2' + imageW,
+              'https://www.themoviedb.org/t/p/w600_and_h900_bestv2' +
+                  pelicula.image,
               height: 300,
             ),
           ),
         ),
-        Text(
-          descriptionW,
-          style: TextStyle(
-            fontSize: 4,
-          ),
-        )
+        // Text(
+        //   descriptionW,
+        //   style: TextStyle(
+        //     fontSize: 4,
+        //   ),
+        // )
       ],
     );
   }

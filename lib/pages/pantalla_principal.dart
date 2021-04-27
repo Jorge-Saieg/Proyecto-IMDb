@@ -1,7 +1,7 @@
 import 'package:addicts_movies/mantenimiento.dart';
 import 'package:addicts_movies/pages/buscador.dart';
 import 'package:addicts_movies/pages/favoritos.dart';
-import 'package:addicts_movies/pages/populares.dart';
+import 'package:addicts_movies/pages/peliculas.dart';
 import 'package:addicts_movies/widgets/pantalla_principal_w.dart';
 import 'package:addicts_movies/widgets/search_widget.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +21,7 @@ class _PantallaPrincipalState extends State<PantallaPrincipal> {
   int indexPantallas = 0;
   List<Widget> pantallas = [
     // PantallaPrincipal_W(),
-    Populares(),
+    PeliculaList(),
     Buscador(),
     Favotiros(),
   ];
@@ -35,12 +35,6 @@ class _PantallaPrincipalState extends State<PantallaPrincipal> {
         backgroundColor: Color(0xff445a6f),
         fixedColor: Colors.grey,
         items: [
-          //No logro poner mas de 3 items en el taskbar...
-          // BottomNavigationBarItem(
-          //   icon: Icon(Icons.home),
-          //   label: 'Home',
-          //   backgroundColor: Colors.black,
-          // ),
           BottomNavigationBarItem(
             icon: Icon(Icons.movie_creation_outlined),
             label: 'Movies',
