@@ -2,7 +2,6 @@ import 'package:addicts_movies/service/masVistas_servicio.dart';
 import 'package:flutter/material.dart';
 import 'package:addicts_movies/service/populares_servicio.dart';
 import 'package:addicts_movies/widgets/pelicula_w.dart';
-import 'package:addicts_movies/models/clase_Pelicula.dart';
 import 'package:provider/provider.dart';
 
 class PeliculaList extends StatelessWidget {
@@ -20,12 +19,11 @@ class PeliculaList extends StatelessWidget {
         ),
         backgroundColor: Color(0xff445a6f),
       ),
-      backgroundColor: Color(0xff304860),
+      backgroundColor: Color(0xff2b4056),
       body: ListView(
         children: [
-          //provider de mas populares
           Container(
-            height: 400,
+            height: 500,
             child: Consumer<PopularesProvider>(
               builder: (context, value, child) => ListView.builder(
                 scrollDirection: Axis.horizontal,
@@ -36,9 +34,8 @@ class PeliculaList extends StatelessWidget {
               ),
             ),
           ),
-          //provider de mas vistas
           Container(
-            height: 400,
+            height: 500,
             child: Consumer<MasVistasProvider>(
               builder: (context, value, child) => ListView.builder(
                 scrollDirection: Axis.horizontal,

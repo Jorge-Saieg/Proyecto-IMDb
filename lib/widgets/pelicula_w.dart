@@ -16,6 +16,7 @@ class PeliculaWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
+        Text(pelicula.title),
         ClipRRect(
           borderRadius: BorderRadius.circular(50),
           child: InkWell(
@@ -35,12 +36,6 @@ class PeliculaWidget extends StatelessWidget {
             ),
           ),
         ),
-        // Text(
-        //   descriptionW,
-        //   style: TextStyle(
-        //     fontSize: 4,
-        //   ),
-        // )
       ],
     );
   }

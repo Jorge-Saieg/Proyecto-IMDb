@@ -2,20 +2,16 @@ import 'package:dio/dio.dart';
 import 'package:addicts_movies/models/clase_Pelicula.dart';
 import 'package:flutter/cupertino.dart';
 
-//provider
 class PopularesProvider extends ChangeNotifier {
-  //provider
   List<Pelicula> _peliculas = [];
 
-  //provider
   List<Pelicula> get peliculas => _peliculas;
-  //provider
+
   void setPeliculas(List<Pelicula> peliculas) {
     _peliculas = peliculas;
     notifyListeners();
   }
 
-  //provider
   PopularesProvider() {
     obtenerPopulares();
   }
@@ -29,7 +25,6 @@ class PopularesProvider extends ChangeNotifier {
       var listadoPeliculas =
           json.map((peliculaJson) => Pelicula.fromJson(peliculaJson)).toList();
 
-      //provider
       var listPeliculas = List<Pelicula>.from(listadoPeliculas);
       setPeliculas(listPeliculas);
       return listPeliculas;

@@ -5,10 +5,17 @@ class Favotiros extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Busqueda'),
-        backgroundColor: Colors.transparent,
+        title: Center(
+          child: Text(
+            'favoritos',
+            style: TextStyle(
+              color: Colors.grey[400],
+            ),
+          ),
+        ),
+        backgroundColor: Color(0xff445a6f),
       ),
-      backgroundColor: Color(0xff304860),
+      backgroundColor: Color(0xff2b4056),
     );
   }
 }

@@ -1,6 +1,6 @@
 import 'package:addicts_movies/models/clase_Pelicula.dart';
 import 'package:dio/dio.dart';
-import 'package:addicts_movies/models/clase_MasVistas.dart';
+import 'package:addicts_movies/models/clase_Pelicula.dart';
 import 'package:flutter/cupertino.dart';
 
 class MasVistasProvider extends ChangeNotifier {

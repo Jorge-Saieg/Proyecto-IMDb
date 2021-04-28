@@ -1,9 +1,6 @@
-import 'package:addicts_movies/mantenimiento.dart';
 import 'package:addicts_movies/pages/buscador.dart';
 import 'package:addicts_movies/pages/favoritos.dart';
 import 'package:addicts_movies/pages/peliculas.dart';
-import 'package:addicts_movies/widgets/pantalla_principal_w.dart';
-import 'package:addicts_movies/widgets/search_widget.dart';
 import 'package:flutter/material.dart';
 
 //COSAS QUE ARREGLAR:
@@ -16,7 +13,6 @@ class PantallaPrincipal extends StatefulWidget {
   _PantallaPrincipalState createState() => _PantallaPrincipalState();
 }
 
-//page builder
 class _PantallaPrincipalState extends State<PantallaPrincipal> {
   int indexPantallas = 0;
   List<Widget> pantallas = [
@@ -25,6 +21,8 @@ class _PantallaPrincipalState extends State<PantallaPrincipal> {
     Buscador(),
     Favotiros(),
   ];
+
+  //   ---> page builder  <---
   @override
   Widget build(BuildContext context) {
     return Scaffold(
