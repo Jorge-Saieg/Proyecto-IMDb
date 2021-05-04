@@ -10,44 +10,40 @@ class Buscador extends StatefulWidget {
 }
 
 class _BuscadorState extends State<Buscador> {
+  final movie = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    movie.addListener(() => setState(() {}));
+  }
+
   @override
   Widget build(BuildContext context) {
-    final movie = TextEditingController();
-
-    initState() {
-      super.initState();
-      movie.addListener(() => setState(() {}));
-    }
-
     return Scaffold(
       appBar: AppBar(
         title: TextField(
+          cursorColor: Colors.grey[400],
+          // cursorHeight: 25,
           controller: movie,
           style: TextStyle(
-            color: Color(0xff304860),
+            color: Colors.grey[400],
           ),
           decoration: InputDecoration(
-            fillColor: Colors.white,
-            filled: true,
             hintText: 'Seatch MDb',
             hintStyle: TextStyle(
-              color: Color(0xff304860),
-            ),
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.all(
-                Radius.circular(10.0),
-              ),
+              color: Colors.grey[400],
             ),
             prefixIcon: Icon(
               Icons.search,
-              color: Color(0xff304860),
+              color: Colors.grey[400],
             ),
             suffixIcon: movie.text.isEmpty
                 ? Container(width: 0)
                 : IconButton(
                     icon: Icon(
                       Icons.close,
-                      color: Color(0xff304860),
+                      color: Colors.grey[400],
                     ),
                     onPressed: () => movie.clear(),
                   ),

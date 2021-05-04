@@ -19,11 +19,12 @@ class PeliculaList extends StatelessWidget {
         ),
         backgroundColor: Color(0xff445a6f),
       ),
-      backgroundColor: Color(0xff2b4056),
+      backgroundColor: Color(0xff223344),
       body: ListView(
         children: [
           Container(
-            height: 500,
+            //color: Color(0xff445a6f),
+            height: 420,
             child: Consumer<PopularesProvider>(
               builder: (context, value, child) => ListView.builder(
                 scrollDirection: Axis.horizontal,
@@ -34,8 +35,25 @@ class PeliculaList extends StatelessWidget {
               ),
             ),
           ),
+          SizedBox(
+            height: 40,
+          ),
           Container(
-            height: 500,
+            //color: Color(0xff445a6f),
+            height: 400,
+            child: Consumer<MasVistasProvider>(
+              builder: (context, value, child) => ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: value.peliculas.length,
+                itemBuilder: (context, index) => PeliculaWidget(
+                  pelicula: value.peliculas[index],
+                ),
+              ),
+            ),
+          ),
+          Container(
+            //color: Color(0xff445a6f),
+            height: 400,
             child: Consumer<MasVistasProvider>(
               builder: (context, value, child) => ListView.builder(
                 scrollDirection: Axis.horizontal,
