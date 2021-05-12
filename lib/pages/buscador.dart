@@ -15,7 +15,7 @@ class _BuscadorState extends State<Buscador> {
   @override
   void initState() {
     super.initState();
-    movie.addListener(() => setState(() {}));
+    //  movie.addListener(() => setState(() {}));
   }
 
   @override
@@ -25,6 +25,10 @@ class _BuscadorState extends State<Buscador> {
         title: TextField(
           cursorColor: Colors.grey[400],
           // cursorHeight: 25,
+          onChanged: (value) {
+            print(value);
+            setState(() {});
+          },
           controller: movie,
           style: TextStyle(
             color: Colors.grey[400],
@@ -45,7 +49,10 @@ class _BuscadorState extends State<Buscador> {
                       Icons.close,
                       color: Colors.grey[400],
                     ),
-                    onPressed: () => movie.clear(),
+                    onPressed: () {
+                      movie.clear();
+                      setState(() {});
+                    },
                   ),
           ),
         ),

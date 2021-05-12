@@ -1,6 +1,5 @@
 import 'package:addicts_movies/models/clase_Pelicula.dart';
 import 'package:dio/dio.dart';
-import 'package:addicts_movies/models/clase_Pelicula.dart';
 import 'package:flutter/cupertino.dart';
 
 class MasVistasProvider extends ChangeNotifier {
@@ -24,11 +23,12 @@ class MasVistasProvider extends ChangeNotifier {
       final json = response.data['results'];
       var listadoPeliculas =
           json.map((peliculaJson) => Pelicula.fromJson(peliculaJson)).toList();
-
+      print('SI SE PUDO DE MAS VISTAS');
       var listPeliculas = List<Pelicula>.from(listadoPeliculas);
       setPeliculas(listPeliculas);
       return listPeliculas;
     } catch (e) {
+      print('HUBO UN ERROR DE MAS VISTAS');
       return [];
     }
   }

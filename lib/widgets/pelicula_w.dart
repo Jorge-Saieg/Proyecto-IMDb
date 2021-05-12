@@ -2,7 +2,8 @@ import 'package:addicts_movies/models/clase_Pelicula.dart';
 import 'package:addicts_movies/widgets/detalles_w.dart';
 import 'package:flutter/material.dart';
 
-// como poner
+//darle sombra y el ciculo de cargando
+// poner los titulos del lado izquierdo
 
 class PeliculaWidget extends StatelessWidget {
   const PeliculaWidget({
@@ -21,49 +22,70 @@ class PeliculaWidget extends StatelessWidget {
         //crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           //
-          ClipRRect(
-            //  borderRadius: BorderRadius.circular(50),
-            child: InkWell(
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => DetalleWidget(
-                      pelicula: pelicula,
+          InkWell(
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => DetalleWidget(
+                    pelicula: pelicula,
+                  ),
+                ),
+              );
+            },
+            child: Container(
+              width: 150,
+              child: Column(
+                children: [
+                  Image.network(
+                    'https://www.themoviedb.org/t/p/w200' + pelicula.image,
+                    // height: 200,
+                  ),
+                  ClipRRect(
+                    borderRadius: BorderRadius.vertical(
+                      bottom: Radius.circular(10),
+                    ),
+                    child: Container(
+                      width: 202,
+                      color: Color(0xff445a6f),
+                      child: Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Text(
+                              pelicula.original_title,
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(
+                                color: Colors.grey[400],
+                              ),
+                            ),
+                            SizedBox(
+                              height: 6,
+                            ),
+                            Row(
+                              children: [
+                                Icon(
+                                  Icons.star,
+                                  size: 16,
+                                  color: Colors.amber,
+                                ),
+                                Text(
+                                  pelicula.vote_average.toString(),
+                                  style: TextStyle(
+                                    color: Colors.grey[400],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
                   ),
-                );
-              },
-              child: Image.network(
-                'https://www.themoviedb.org/t/p/w600_and_h900_bestv2' +
-                    pelicula.image,
-                height: 300,
+                ],
               ),
             ),
           ),
-          Container(
-              width: 202,
-              height: 70,
-              color: Color(0xff445a6f),
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Text(
-                      pelicula.title,
-                      style: TextStyle(
-                        color: Colors.grey[400],
-                      ),
-                    ),
-                    Text(
-                      pelicula.title,
-                      style: TextStyle(
-                        color: Colors.grey[400],
-                      ),
-                    ),
-                  ],
-                ),
-              )),
         ],
       ),
     );

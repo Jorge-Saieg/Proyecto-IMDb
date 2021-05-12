@@ -1,5 +1,6 @@
 import 'package:addicts_movies/service/masVistas_servicio.dart';
 import 'package:addicts_movies/service/populares_servicio.dart';
+import 'package:addicts_movies/service/upcoming_servicio.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'pages/pantalla_principal.dart';
@@ -21,6 +22,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (context) => MasVistasProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => UpcomingProvider(),
         ),
       ],
       child: MaterialApp(
