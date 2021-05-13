@@ -29,6 +29,7 @@ class MasVistasProvider extends ChangeNotifier {
       return listPeliculas;
     } catch (e) {
       print('HUBO UN ERROR DE MAS VISTAS');
+      print(e);
       return [];
     }
   }

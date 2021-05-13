@@ -70,6 +70,9 @@ class DetalleWidget extends StatelessWidget {
                   fontSize: 20,
                 ),
               ),
+              Text(
+                pelicula.release_date.year.toString(),
+              ),
             ],
           ),
         ],

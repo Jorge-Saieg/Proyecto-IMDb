@@ -30,6 +30,7 @@ class UpcomingProvider extends ChangeNotifier {
       return listPeliculas;
     } catch (e) {
       print('HUBO UN ERROR DE UPCOMUNG');
+      print(e);
 
       return [];
     }

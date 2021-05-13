@@ -30,6 +30,7 @@ class PopularesProvider extends ChangeNotifier {
       return listPeliculas;
     } catch (e) {
       print('HUBO UN ERROR DE POPULARES');
+      print(e);
       return [];
     }
   }

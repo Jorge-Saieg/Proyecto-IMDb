@@ -5,6 +5,7 @@ class Pelicula {
     this.backdrop_path,
     this.description,
     this.vote_average,
+    this.release_date,
   });
 
   factory Pelicula.fromJson(Map<String, dynamic> json) {
@@ -12,7 +13,8 @@ class Pelicula {
     final String poster_path = json['poster_path'] ?? '';
     final String backdrop_path = json['backdrop_path'] ?? '';
     final String overview = json['overview'];
-    final double vote_average = json['vote_average'];
+    final double vote_average = json['vote_average'] * 1.0;
+    final DateTime release_date = DateTime.parse(json['release_date'] ?? '');
 
     return Pelicula(
         original_title: original_title,
@@ -26,4 +28,5 @@ class Pelicula {
   final String description;
   final double vote_average;
   final String backdrop_path;
+  final DateTime release_date;
 }
