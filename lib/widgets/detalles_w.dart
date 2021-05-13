@@ -70,9 +70,14 @@ class DetalleWidget extends StatelessWidget {
                   fontSize: 20,
                 ),
               ),
-              Text(
-                pelicula.release_date.year.toString(),
+              SizedBox(
+                width: 10,
               ),
+              Text(pelicula.release_date.year.toString(),
+                  style: TextStyle(
+                    color: Colors.grey[400],
+                    fontSize: 20,
+                  )),
             ],
           ),
         ],

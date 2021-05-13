@@ -17,11 +17,13 @@ class Pelicula {
     final DateTime release_date = DateTime.parse(json['release_date'] ?? '');
 
     return Pelicula(
-        original_title: original_title,
-        image: poster_path,
-        description: overview,
-        vote_average: vote_average,
-        backdrop_path: backdrop_path);
+      original_title: original_title,
+      image: poster_path,
+      description: overview,
+      vote_average: vote_average,
+      backdrop_path: backdrop_path,
+      release_date: release_date,
+    );
   }
   final String original_title;
   final String image;
