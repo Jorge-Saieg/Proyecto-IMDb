@@ -1,7 +1,17 @@
+import 'package:addicts_movies/widgets/myList_button.dart';
 import 'package:flutter/material.dart';
+
+import 'models/clase_Pelicula.dart';
 
 //llego desde la pantalla principal apretando alguna plataforma
 class Mantenimiento extends StatelessWidget {
+  const Mantenimiento({
+    this.pelicula,
+    Key key,
+  }) : super(key: key);
+
+  final Pelicula pelicula;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,13 +23,14 @@ class Mantenimiento extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              'assets/images/triangulo.jpg',
+              'assets/images/no_disponible.jpg',
               height: 90,
             ),
             Text(
               'En mantenimiento',
               style: TextStyle(fontSize: 20),
             ),
+            //MyListBtn(id: pelicula.id.toString()),
           ],
         ),
       ),

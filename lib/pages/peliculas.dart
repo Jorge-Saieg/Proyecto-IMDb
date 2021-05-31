@@ -26,46 +26,19 @@ class PeliculaList extends StatelessWidget {
       body: ListView(
         children: [
           Padding(
-            padding: const EdgeInsets.only(left: 20, top: 20),
-            child: Row(
-              children: [
-                // Icon(Icons.arrow_forward_ios),
-                Text(
-                  'Top rated',
-                  style: TextStyle(
-                    color: Colors.grey[400],
-                    fontSize: 25,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Container(
-            //color: Color(0xff445a6f),
-            height: 350,
-            child: Consumer<MasVistasProvider>(
-              builder: (context, value, child) => ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: value.peliculas.length,
-                itemBuilder: (context, index) => PeliculaWidget(
-                  pelicula: value.peliculas[index],
-                ),
-              ),
-            ),
-          ),
-          Padding(
             padding: const EdgeInsets.all(20),
             child: Text(
               'Coming soon',
               style: TextStyle(
                 color: Colors.grey[400],
                 fontSize: 25,
+                fontWeight: FontWeight.w500,
               ),
             ),
           ),
           Container(
             //color: Color(0xff445a6f),
-            height: 350,
+            height: 305,
             child: Consumer<UpcomingProvider>(
               builder: (context, value, child) => ListView.builder(
                 scrollDirection: Axis.horizontal,
@@ -83,13 +56,43 @@ class PeliculaList extends StatelessWidget {
               style: TextStyle(
                 color: Colors.grey[400],
                 fontSize: 25,
+                fontWeight: FontWeight.w500,
               ),
             ),
           ),
           Container(
             //color: Color(0xff445a6f),
-            height: 350,
+            height: 305,
             child: Consumer<PopularesProvider>(
+              builder: (context, value, child) => ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: value.peliculas.length,
+                itemBuilder: (context, index) => PeliculaWidget(
+                  pelicula: value.peliculas[index],
+                ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 20, top: 20),
+            child: Row(
+              children: [
+                // Icon(Icons.arrow_forward_ios),
+                Text(
+                  'Top rated',
+                  style: TextStyle(
+                    color: Colors.grey[400],
+                    fontSize: 25,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            //color: Color(0xff445a6f),
+            height: 305,
+            child: Consumer<MasVistasProvider>(
               builder: (context, value, child) => ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: value.peliculas.length,

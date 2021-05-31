@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 import '../mantenimiento.dart';
 
-class PantallaPrincipal_W extends StatefulWidget {
+class PantallaPrincipalW extends StatefulWidget {
   @override
   _PantallaPrincipalState createState() => _PantallaPrincipalState();
 }
 
-class _PantallaPrincipalState extends State<PantallaPrincipal_W> {
+class _PantallaPrincipalState extends State<PantallaPrincipalW> {
   @override
   Widget build(BuildContext context) {
     return Container(

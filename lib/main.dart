@@ -1,5 +1,7 @@
 import 'package:addicts_movies/service/masVistas_servicio.dart';
+import 'package:addicts_movies/service/myList_servicio.dart';
 import 'package:addicts_movies/service/populares_servicio.dart';
+import 'package:addicts_movies/service/search_service.dart';
 import 'package:addicts_movies/service/upcoming_servicio.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -25,6 +27,12 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (context) => UpcomingProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => SearchProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => MyListProvider(),
         ),
       ],
       child: MaterialApp(

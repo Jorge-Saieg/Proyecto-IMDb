@@ -1,5 +1,5 @@
 import 'package:addicts_movies/pages/buscador.dart';
-import 'package:addicts_movies/pages/favoritos.dart';
+import 'package:addicts_movies/pages/myList.dart';
 import 'package:addicts_movies/pages/peliculas.dart';
 import 'package:flutter/material.dart';
 
@@ -44,8 +44,8 @@ class _PantallaPrincipalState extends State<PantallaPrincipal> {
             backgroundColor: Colors.black,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.favorite_border),
-            label: 'Favorite',
+            icon: Icon(Icons.bookmark_border),
+            label: 'My List',
             backgroundColor: Colors.black,
           ),
         ],

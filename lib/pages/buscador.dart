@@ -1,4 +1,7 @@
+import 'package:addicts_movies/service/search_service.dart';
+import 'package:addicts_movies/widgets/search_w.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../mantenimiento.dart';
 
@@ -15,11 +18,13 @@ class _BuscadorState extends State<Buscador> {
   @override
   void initState() {
     super.initState();
-    //  movie.addListener(() => setState(() {}));
+    movie.addListener(() => setState(() {}));
   }
 
   @override
   Widget build(BuildContext context) {
+    // String value = movie.text;
+    final search = Provider.of<SearchProvider>(context);
     return Scaffold(
       appBar: AppBar(
         title: TextField(
@@ -27,7 +32,10 @@ class _BuscadorState extends State<Buscador> {
           // cursorHeight: 25,
           onChanged: (value) {
             print(value);
-            setState(() {});
+
+            search.getPelicula(value);
+            print(search.searchmovie.toString());
+            // setState(() {});
           },
           controller: movie,
           style: TextStyle(
@@ -59,29 +67,31 @@ class _BuscadorState extends State<Buscador> {
         backgroundColor: Color(0xff445a6f),
       ),
       backgroundColor: Color(0xff2b4056),
-      body: SafeArea(
-        child: ListView(
-          //NO FUNCIONAN  LOS AXIS...??
-          // crossAxisAlignment: CrossAxisAlignment.stretch,
-          // mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            SizedBox(
-              height: 20,
-            ),
+      body: movie.text.isEmpty
+          ? ListView(
+              children: [
+                SizedBox(
+                  height: 20,
+                ),
 
-            //METODOS PARA CREAR LAS IMAGENES
-            plataformas('assets/images/Netflix1.jpg'),
-            SizedBox(height: 20),
-            plataformas('assets/images/DisneyPlus.jpg'),
-            SizedBox(height: 20),
-            plataformas('assets/images/PrimeVideo.png'),
-            SizedBox(height: 20),
-            plataformas('assets/images/HBO.png'),
-            SizedBox(height: 20),
-            plataformas('assets/images/hulu.jpg'),
-          ],
-        ),
-      ),
+                //METODOS PARA CREAR LAS IMAGENES
+                plataformas('assets/images/Netflix1.jpg'),
+                SizedBox(height: 20),
+                plataformas('assets/images/DisneyPlus.jpg'),
+                SizedBox(height: 20),
+                plataformas('assets/images/PrimeVideo.png'),
+                SizedBox(height: 20),
+                plataformas('assets/images/HBO.png'),
+                SizedBox(height: 20),
+                plataformas('assets/images/hulu.jpg'),
+              ],
+            )
+          : ListView.builder(
+              itemCount: search.searchmovie.length,
+              itemBuilder: (context, index) => SearchWidget(
+                pelicula: search.searchmovie[index],
+              ),
+            ),
     );
   }
 
