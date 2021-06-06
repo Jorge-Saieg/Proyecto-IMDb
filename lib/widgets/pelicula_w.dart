@@ -51,7 +51,7 @@ class PeliculaWidget extends StatelessWidget {
                           bottom: Radius.circular(10),
                         ),
                         child: Container(
-                          width: 202,
+                          //  width: 202,
                           color: Color(0xff445a6f),
                           child: Padding(
                             padding: const EdgeInsets.all(10.0),

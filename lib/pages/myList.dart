@@ -25,14 +25,10 @@ class _MyListState extends State<MyList> {
           backgroundColor: Color(0xff445a6f),
         ),
         backgroundColor: Color(0xff2b4056),
-        body: Stack(
-          children: [
-            ListView.builder(
-              itemCount: value.listaPelis.length,
-              itemBuilder: (context, index) =>
-                  MyListWidget(value.listaPelis[index]),
-            )
-          ],
+        body: ListView.builder(
+          itemCount: value.listaPelis.length,
+          itemBuilder: (context, index) =>
+              MyListWidget(value.listaPelis[index]),
         ),
       ),
     );
