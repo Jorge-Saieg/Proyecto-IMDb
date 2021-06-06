@@ -76,7 +76,7 @@ class SearchWidget extends StatelessWidget {
                   ),
                 ),
                 MyListBtn(
-                  id: pelicula.id,
+                  pelicula: pelicula,
                 ),
               ],
             ),

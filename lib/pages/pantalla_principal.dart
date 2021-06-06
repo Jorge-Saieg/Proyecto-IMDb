@@ -19,7 +19,7 @@ class _PantallaPrincipalState extends State<PantallaPrincipal> {
     // PantallaPrincipal_W(),
     PeliculaList(),
     Buscador(),
-    Favotiros(),
+    MyList(),
   ];
 
   //   ---> page builder  <---

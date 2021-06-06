@@ -3,11 +3,8 @@ import 'package:addicts_movies/widgets/detalles_w.dart';
 import 'package:addicts_movies/widgets/myList_button.dart';
 import 'package:flutter/material.dart';
 
-//darle sombra y el ciculo de cargando
-// poner los titulos del lado izquierdo
-
-class PeliculaWidget extends StatelessWidget {
-  const PeliculaWidget({this.pelicula});
+class MyListWidget extends StatelessWidget {
+  MyListWidget(this.pelicula);
 
   final Pelicula pelicula;
 
