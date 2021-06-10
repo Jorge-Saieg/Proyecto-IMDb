@@ -3,34 +3,37 @@ class Pelicula {
     this.originalTitle,
     this.posterPath,
     this.backdropPath,
-    this.description,
+    this.overview,
     this.voteAverage,
     this.releaseDate,
     this.id,
   });
 
   factory Pelicula.fromJson(Map<String, dynamic> json) {
-    final String originalTitle = json['original_title'];
-    final String posterPath = json['poster_path'] ?? '';
-    final String backdropPath = json['backdrop_path'] ?? '';
-    final String overview = json['overview'];
-    final double voteAverage = json['vote_average'] * 1.0;
-    final DateTime releaseDate = DateTime.parse(json['release_date'] ?? '');
-    final String id = json['id'].toString() ?? '';
-
     return Pelicula(
-      originalTitle: originalTitle,
-      posterPath: posterPath,
-      description: overview,
-      voteAverage: voteAverage,
-      backdropPath: backdropPath,
-      releaseDate: releaseDate,
-      id: id,
+      originalTitle: json['original_title'],
+      posterPath: json['poster_path'] ?? '',
+      overview: json['overview'],
+      voteAverage: json['vote_average'] * 1.0,
+      backdropPath: json['backdrop_path'] ?? '',
+      releaseDate: DateTime.parse(json['release_date'] ?? ''),
+      id: json['id'].toString() ?? '',
+    );
+  }
+  factory Pelicula.fromMyJson(Map<String, dynamic> json) {
+    return Pelicula(
+      originalTitle: json['originaTitle'],
+      posterPath: json['posterPath'] ?? '',
+      overview: json['overview'],
+      voteAverage: json['voteAverage'] * 1.0,
+      backdropPath: json['backdropPath'] ?? '',
+      releaseDate: DateTime.parse(json['releaseDate'] ?? ''),
+      id: json['id'].toString() ?? '',
     );
   }
   final String originalTitle;
   final String posterPath;
-  final String description;
+  final String overview;
   final double voteAverage;
   final String backdropPath;
   final DateTime releaseDate;

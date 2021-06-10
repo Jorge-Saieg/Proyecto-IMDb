@@ -13,14 +13,8 @@ class MyListBtn extends StatefulWidget {
 }
 
 class _MyListBtnState extends State<MyListBtn> {
-  String valorGuardado = 'nada';
-
   @override
   Widget build(BuildContext context) {
-    setState(() {
-      getPreference();
-    });
-
     final provider = Provider.of<MyListProvider>(context);
     return IconButton(
       icon: provider.myListIcon(widget.pelicula.id),
@@ -28,20 +22,7 @@ class _MyListBtnState extends State<MyListBtn> {
       iconSize: 40.0,
       onPressed: () {
         provider.setId(widget.pelicula);
-        setPreference();
       },
     );
-  }
-
-  Future<void> getPreference() async {
-    SharedPreferences preferences = await SharedPreferences.getInstance();
-    setState(() {
-      valorGuardado = preferences.get('MyList');
-    });
-  }
-
-  Future<void> setPreference() async {
-    SharedPreferences preferences = await SharedPreferences.getInstance();
-    preferences.setString('MyList', valorGuardado);
   }
 }
