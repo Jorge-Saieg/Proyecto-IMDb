@@ -68,7 +68,7 @@ class DetalleWidget extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: Text(
-                  pelicula.description,
+                  pelicula.overview,
                   style: TextStyle(
                     fontSize: 20,
                     color: Colors.grey[350],
