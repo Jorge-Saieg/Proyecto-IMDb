@@ -57,7 +57,9 @@ class SearchWidget extends StatelessWidget {
                           Text(
                             pelicula.releaseDate.year.toString(),
                             style: TextStyle(
+                              height: 10,
                               color: Colors.grey[400],
+                              fontSize: 16,
                             ),
                           ),
                           Row(

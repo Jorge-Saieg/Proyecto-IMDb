@@ -42,7 +42,7 @@ class _BuscadorState extends State<Buscador> {
             color: Colors.grey[400],
           ),
           decoration: InputDecoration(
-            hintText: 'Seatch MDb',
+            hintText: 'Search MDb',
             hintStyle: TextStyle(
               color: Colors.grey[400],
             ),

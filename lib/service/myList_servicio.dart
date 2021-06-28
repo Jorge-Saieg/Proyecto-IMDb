@@ -17,18 +17,18 @@ class MyListProvider extends ChangeNotifier {
   }
 
   Future<void> setId(Pelicula pelicula) async {
-    SharedPreferences preferences = await SharedPreferences.getInstance();
+    //SharedPreferences preferences = await SharedPreferences.getInstance();
 
     if (_myList.contains(pelicula.id)) {
       _myList.removeWhere((element) => element == pelicula.id);
       listaPelis.removeWhere((element) => element == pelicula);
-      preferences.setStringList(
-          'myList', listaPelis.map((e) => jsonEncode(e)).toList());
+      // preferences.setStringList(
+      //     'myList', listaPelis.map((e) => jsonEncode(e)).toList());
     } else {
       _myList.add(pelicula.id);
       listaPelis.add(pelicula);
-      preferences.setStringList(
-          'myList', listaPelis.map((e) => jsonEncode(e)).toList());
+      // preferences.setStringList(
+      //     'myList', listaPelis.map((e) => jsonEncode(e)).toList());
     }
     notifyListeners();
   }
