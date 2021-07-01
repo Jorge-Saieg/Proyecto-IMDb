@@ -27,7 +27,7 @@ class Pelicula {
       overview: json['overview'],
       voteAverage: json['voteAverage'] * 1.0,
       backdropPath: json['backdropPath'] ?? '',
-      releaseDate: DateTime.parse(json['releaseDate'] ?? ''),
+      releaseDate: DateTime.parse(json['releaseDate'] ?? 'hola'),
       id: json['id'].toString() ?? '',
     );
   }

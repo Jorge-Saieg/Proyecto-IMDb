@@ -46,7 +46,7 @@ class MyListProvider extends ChangeNotifier {
 
   Future<void> setPreference() async {
     SharedPreferences preferences = await SharedPreferences.getInstance();
-    if (preferences.getStringList('myList').isEmpty) {
+    if (preferences?.getStringList('myList')?.isEmpty ?? true) {
       preferences.setStringList('myList', []);
     } else {
       listaPelis = preferences.getStringList('myList').map(

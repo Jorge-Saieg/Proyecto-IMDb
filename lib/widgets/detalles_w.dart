@@ -32,16 +32,26 @@ class DetalleWidget extends StatelessWidget {
             // mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              pelicula.backdropPath != ''
-                  ? Image.network(
-                      'https://www.themoviedb.org/t/p/w500' +
-                          pelicula.backdropPath,
-                      fit: BoxFit.fill,
-                      // height: 200,
-                    )
-                  : Image.asset(
-                      'assets/images/not_avaible.jpg',
-                    ),
+              Container(
+                width: 500,
+                height: 281,
+                child: FadeInImage(
+                  placeholder: AssetImage(
+                    'assets/images/loading.gif',
+                  ),
+                  image: pelicula.posterPath != ''
+                      ? NetworkImage(
+                          'https://www.themoviedb.org/t/p/w500' +
+                              pelicula.backdropPath,
+                          //  height: 120,
+                        )
+                      : AssetImage(
+                          'assets/images/not_avaible.jpg',
+                          // height: 90,
+                        ),
+                  fit: BoxFit.cover,
+                ),
+              ),
               Padding(
                 padding: const EdgeInsets.all(20),
                 child: Column(

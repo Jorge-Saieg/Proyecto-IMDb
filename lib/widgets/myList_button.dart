@@ -2,7 +2,6 @@ import 'package:addicts_movies/models/clase_Pelicula.dart';
 import 'package:addicts_movies/service/myList_servicio.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class MyListBtn extends StatefulWidget {
   const MyListBtn({Key key, this.pelicula}) : super(key: key);

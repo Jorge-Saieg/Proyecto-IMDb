@@ -1,3 +1,4 @@
+import 'package:addicts_movies/pages/peliculas.dart';
 import 'package:addicts_movies/service/myList_servicio.dart';
 import 'package:addicts_movies/widgets/myList_w.dart';
 import 'package:flutter/material.dart';
@@ -25,12 +26,32 @@ class _MyListState extends State<MyList> {
           backgroundColor: Color(0xff445a6f),
         ),
         backgroundColor: Color(0xff2b4056),
-        body: ListView.builder(
-          itemCount: value.listaPelis.length,
-          itemBuilder: (context, index) =>
-              MyListWidget(value.listaPelis[index]),
+        body: ListView(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(top: 8.0),
+              child: Center(
+                child: Wrap(
+                  direction: Axis.horizontal,
+                  spacing: 25.0,
+                  //crossAxisAlignment: WrapCrossAlignment.end,
+                  //alignment: WrapAlignment.end,
+                  children: List.generate(
+                    value.listaPelis.length,
+                    (index) => MyListWidget(
+                      value.listaPelis[index],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
   }
 }
+
+// itemCount: value.listaPelis.length,
+//   itemBuilder: (context, index) =>
+//    MyListWidget(value.listaPelis[index]),

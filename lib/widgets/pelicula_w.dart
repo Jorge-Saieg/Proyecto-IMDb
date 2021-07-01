@@ -36,16 +36,26 @@ class PeliculaWidget extends StatelessWidget {
                   width: 150,
                   child: Column(
                     children: [
-                      pelicula.posterPath != ''
-                          ? Image.network(
-                              'https://www.themoviedb.org/t/p/w200' +
-                                  pelicula.posterPath,
-                              //  height: 120,
-                            )
-                          : Image.asset(
-                              'assets/images/no_disponible.jpg',
-                              // height: 90,
-                            ),
+                      Container(
+                        width: 150,
+                        height: 220,
+                        child: FadeInImage(
+                          placeholder: AssetImage(
+                            'assets/images/loading.gif',
+                          ),
+                          image: pelicula.posterPath != ''
+                              ? NetworkImage(
+                                  'https://www.themoviedb.org/t/p/w200' +
+                                      pelicula.posterPath,
+                                  //  height: 120,
+                                )
+                              : AssetImage(
+                                  'assets/images/no_disponible.jpg',
+                                  // height: 90,
+                                ),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
                       ClipRRect(
                         borderRadius: BorderRadius.vertical(
                           bottom: Radius.circular(10),

@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'pages/pantalla_principal.dart';
 
-// -------- PROYECTO DE NIVELACION --------
+// -------- PROYECTO DE NIVELACION -----
 
 void main() {
   runApp(MyApp());
