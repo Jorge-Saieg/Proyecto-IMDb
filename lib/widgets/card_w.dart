@@ -1,49 +1,15 @@
 import 'package:addicts_movies/models/clase_Pelicula.dart';
-import 'package:addicts_movies/widgets/detalles_w.dart';
-import 'package:addicts_movies/widgets/card_w.dart';
 import 'package:flutter/material.dart';
 
 import 'myList_button.dart';
 
-class SearchWidget extends StatelessWidget {
-  const SearchWidget({Key key, this.pelicula});
+class CardWidget extends StatelessWidget {
+  const CardWidget({this.pelicula, Key key}) : super(key: key);
 
   final Pelicula pelicula;
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 5),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              InkWell(
-                onTap: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => DetalleWidget(
-                        pelicula: pelicula,
-                      ),
-                    ),
-                  );
-                },
-                child: CardWidget(
-                  pelicula: pelicula,
-                ),
-              ),
-              Divider(
-                color: Colors.grey[350],
-              ),
-            ],
-          ),
-        ),
-      ],
-    );
-  }
-
-  Widget tarjeta() {
     return Card(
       color: Color(0xff2b4056),
       child: Row(
@@ -126,4 +92,7 @@ class SearchWidget extends StatelessWidget {
       ),
     );
   }
+
+  // intento de trajeta con ListTile
+
 }
