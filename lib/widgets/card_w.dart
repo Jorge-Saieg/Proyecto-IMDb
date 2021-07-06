@@ -34,57 +34,57 @@ class CardWidget extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  pelicula.originalTitle,
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                    color: Colors.grey[400],
-                    fontSize: 20,
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    pelicula.originalTitle,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      color: Colors.grey[400],
+                      fontSize: 20,
+                    ),
                   ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Row(
-                  children: [
-                    Text(
-                      pelicula.releaseDate.year.toString(),
-                      style: TextStyle(
-                        color: Colors.grey[400],
-                        fontSize: 16,
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    children: [
+                      Text(
+                        pelicula.releaseDate.year.toString(),
+                        style: TextStyle(
+                          color: Colors.grey[400],
+                          fontSize: 16,
+                        ),
                       ),
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Row(
-                      children: [
-                        Icon(
-                          Icons.star,
-                          size: 16,
-                          color: Colors.amber,
-                        ),
-                        Text(
-                          pelicula.voteAverage.toString(),
-                          style: TextStyle(
-                            color: Colors.grey[400],
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.star,
+                            size: 16,
+                            color: Colors.amber,
                           ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ],
+                          Text(
+                            pelicula.voteAverage.toString(),
+                            style: TextStyle(
+                              color: Colors.grey[400],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
-          Expanded(
-            child: SizedBox(),
-          ),
+          SizedBox(),
           MyListBtn(
             pelicula: pelicula,
           ),
